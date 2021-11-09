@@ -1,0 +1,9 @@
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+    - 'build'
+    - '-t'
+    - 'gcr.io/google-samples/hello-app:1.0'
+    - '-t'
+    - 'us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0'
+    - '.'
+  dir: 'hello-app'
