@@ -4,9 +4,9 @@ RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get -y install python3 python3-setuptools python3-pip gunicorn3
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
-COPY templates cloudbuild.yaml myproject.py requirements.txt startup.sh wsgi.py templates/
+COPY flaskapp templates/
 WORKDIR /templates
-RUN chmod +x startup.sh
 RUN pip3 install -r requirements.txt
 EXPOSE 5000
+RUN chmod +x startup.sh
 ENTRYPOINT "./startup.sh"
