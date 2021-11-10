@@ -8,4 +8,5 @@ COPY templates cloudbuild.yaml myproject.py requirements.txt startup.sh wsgi.py 
 WORKDIR /templates
 RUN pip3 install -r requirements.txt
 EXPOSE 5000
+RUN chmod +x startup.sh
 ENTRYPOINT "./startup.sh"
